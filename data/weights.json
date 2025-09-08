@@ -1,8 +1,42 @@
 [
-  { "ticker": "SPY", "weight": 40 },
-  { "ticker": "QQQ", "weight": 25 },
-  { "ticker": "AAPL", "weight": 15 },
-  { "ticker": "MSFT", "weight": 10 },
-  { "ticker": "CASH", "weight": 10 }
+  {
+    "ticker": "AAPL",
+    "weight": 23.5501
+  },
+  {
+    "ticker": "SPY",
+    "weight": 12.5753
+  },
+  {
+    "ticker": "VOO",
+    "weight": 23.4068
+  },
+  {
+    "ticker": "WM",
+    "weight": 2.4283
+  },
+  {
+    "ticker": "SGDM",
+    "weight": 0.6262
+  },
+  {
+    "ticker": "MGV",
+    "weight": 5.725
+  },
+  {
+    "ticker": "QQQ",
+    "weight": 13.8436
+  },
+  {
+    "ticker": "GOOGL",
+    "weight": 5.597
+  },
+  {
+    "ticker": "AMZN",
+    "weight": 5.6401
+  },
+  {
+    "ticker": "CASH",
+    "weight": 6.6073
+  }
 ]
-
