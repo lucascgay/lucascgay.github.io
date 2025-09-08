@@ -99,3 +99,12 @@ body {
   .posts { grid-template-columns: 1fr; }
   .split { grid-template-columns: 1fr; }
 }
+
+/* Chart card styling */
+.chart-card {
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.06)) , var(--panel);
+  border: 1px solid #1e2029;
+  border-radius: 14px;
+  padding: 12px 12px 6px;
+  box-shadow: 0 10px 24px rgba(0,0,0,0.25);
+}
