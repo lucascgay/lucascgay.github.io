@@ -28,3 +28,4 @@ Just open `index.html` in a browser or use a simple static server, e.g. `python3
 ## Notes
 - `.nojekyll` disables Jekyll processing so static files are served as-is.
 - `404.html` provides a simple not-found page.
+ - Portfolio chart reads `data/weights.json` (percent-only). To generate it safely from private holdings, use `scripts/compute_weights.py`. For cash, either set `{ "ticker": "CASH", "value": <cash dollars> }` or `{ "ticker": "CASH", "shares": <cash dollars>, "price": 1 }`. Use `--fetch` to pull latest prices via yfinance.
