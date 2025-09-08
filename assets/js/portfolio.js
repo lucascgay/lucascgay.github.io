@@ -5,9 +5,14 @@
   fetch('/data/weights.json', { cache: 'no-store' })
     .then((r) => r.json())
     .then((data) => {
-      // data: [{ ticker: "AAPL", weight: 0.25 }, ...] or weight in percent
+      // data: [{ ticker: "AAPL", weight: <number> }]
+      // Accept either:
+      //  - percentages (sum ≈ 100)
+      //  - fractions (sum ≤ 1), which are converted to %
       const labels = data.map((d) => d.ticker);
-      const weights = data.map((d) => (d.weight > 1 ? d.weight : d.weight * 100));
+      const raw = data.map((d) => Number(d.weight));
+      const sum = raw.reduce((a, b) => a + (isFinite(b) ? b : 0), 0);
+      const weights = (sum <= 1.000001) ? raw.map((x) => x * 100) : raw;
 
       const colors = [
         '#6ee7b7', '#7dd3fc', '#fca5a5', '#c4b5fd', '#fde68a',
@@ -43,4 +48,3 @@
       // Silently ignore; chart is optional
     });
 })();
-
