@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>My Website</title>
+    <title>Lucas Gay — Finance x CS</title>
     <meta name="description" content="Personal website" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,25 +13,62 @@
   <body>
     <main class="container">
       <header class="site-header">
-        <h1 id="site-title">Your Name</h1>
-        <p class="tagline">Building cool things on the internet.</p>
+        <nav class="nav">
+          <a class="brand" href="/">LG</a>
+          <div class="nav-links">
+            <a href="/about.html">About</a>
+            <a href="/blog/">Blog</a>
+            <a href="https://github.com/lucascgay" target="_blank" rel="noopener">GitHub</a>
+          </div>
+        </nav>
+        <h1 id="site-title"><span class="accent">Lucas Gay</span></h1>
+        <p class="tagline">Finance x Computer Science — quant-curious and product-minded.</p>
+        <div class="cta">
+          <a class="btn btn-primary" href="/about.html">About me</a>
+          <a class="btn" href="/blog/">Read the blog</a>
+        </div>
       </header>
 
       <section class="content">
-        <p>
-          This is your new GitHub Pages site. Edit <code>index.html</code> and
-          <code>assets/css/styles.css</code> to make it yours.
-        </p>
-        <ul class="links">
-          <li><a href="#" aria-disabled="true">About</a></li>
-          <li><a href="#" aria-disabled="true">Projects</a></li>
-          <li><a href="#" aria-disabled="true">Contact</a></li>
-        </ul>
+        <h2 class="section-title">Focus areas</h2>
+        <div class="cards">
+          <article class="card">
+            <h3>Markets & Investing</h3>
+            <p>Bottom‑up research, valuation frameworks, risk management.</p>
+            <div class="tags"><span>Equities</span><span>Macro</span><span>Factor</span></div>
+          </article>
+          <article class="card">
+            <h3>Quant & Data</h3>
+            <p>Systematic ideas, backtests, and data pipelines that scale.</p>
+            <div class="tags"><span>Python</span><span>Pandas</span><span>Backtesting</span></div>
+          </article>
+          <article class="card">
+            <h3>FinTech & Product</h3>
+            <p>APIs, UX, and tooling that make financial workflows better.</p>
+            <div class="tags"><span>APIs</span><span>TypeScript</span><span>Cloud</span></div>
+          </article>
+        </div>
+      </section>
+
+      <section class="content">
+        <h2 class="section-title">Latest posts</h2>
+        <div class="posts">
+          <a class="post" href="/blog/posts/quant-roadmap.html">
+            <span class="post-meta">Guide · Apr 2025</span>
+            <span class="post-title">A practical roadmap for learning quant</span>
+            <span class="post-desc">Concepts, data, and projects to build intuition.</span>
+          </a>
+          <a class="post" href="/blog/">
+            <span class="post-meta">All posts</span>
+            <span class="post-title">Browse the full blog</span>
+            <span class="post-desc">Notes on markets, code, and experiments.</span>
+          </a>
+        </div>
       </section>
 
       <footer class="site-footer">
         <p>
-          © <span id="year"></span> Your Name. Hosted on GitHub Pages.
+          © <span id="year"></span> Lucas Gay. Hosted on GitHub Pages.
         </p>
       </footer>
     </main>
@@ -41,4 +78,3 @@
     </script>
   </body>
   </html>
-

@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Blog — Lucas Gay</title>
+    <meta name="description" content="Blog — finance, code, and notes" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/styles.css" />
+  </head>
+  <body>
+    <main class="container">
+      <header class="site-header">
+        <nav class="nav">
+          <a class="brand" href="/">LG</a>
+          <div class="nav-links">
+            <a href="/about.html">About</a>
+            <a class="active" href="/blog/">Blog</a>
+            <a href="https://github.com/lucascgay" target="_blank" rel="noopener">GitHub</a>
+          </div>
+        </nav>
+        <h1 id="site-title"><span class="accent">Blog</span></h1>
+        <p class="tagline">Notes on markets, code, and experiments.</p>
+      </header>
+
+      <section class="content">
+        <div class="posts">
+          <a class="post" href="/blog/posts/quant-roadmap.html">
+            <span class="post-meta">Guide · Apr 2025</span>
+            <span class="post-title">A practical roadmap for learning quant</span>
+            <span class="post-desc">Concepts, data, and projects to build intuition.</span>
+          </a>
+        </div>
+      </section>
+
+      <footer class="site-footer">
+        <p>© <span id="year"></span> Lucas Gay.</p>
+      </footer>
+    </main>
+    <script>
+      document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+  </body>
+  </html>
+

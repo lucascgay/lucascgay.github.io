@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>A practical roadmap for learning quant — Lucas Gay</title>
+    <meta name="description" content="A practical roadmap for learning quantitative finance and data." />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/styles.css" />
+    <style>
+      .post-body { max-width: 760px; margin: 0 auto; }
+      .post-body h2 { margin-top: 28px; }
+      .code { background: #0e1116; border: 1px solid #1e2029; border-radius: 8px; padding: 14px; overflow-x: auto; }
+      .muted { color: var(--muted); }
+    </style>
+  </head>
+  <body>
+    <main class="container">
+      <header class="site-header">
+        <nav class="nav">
+          <a class="brand" href="/">LG</a>
+          <div class="nav-links">
+            <a href="/about.html">About</a>
+            <a href="/blog/">Blog</a>
+            <a href="https://github.com/lucascgay" target="_blank" rel="noopener">GitHub</a>
+          </div>
+        </nav>
+        <h1 id="site-title"><span class="accent">A practical roadmap for learning quant</span></h1>
+        <p class="tagline muted">Guide · Apr 2025</p>
+      </header>
+
+      <article class="content post-body">
+        <p>
+          This is a pragmatic overview of how I’d approach quantitative finance
+          as a student: build intuition first, then layer in tooling and data.
+        </p>
+
+        <h2>1) Foundations</h2>
+        <ul class="bullets">
+          <li>Statistics: distributions, hypothesis testing, correlation vs. causation</li>
+          <li>Markets: microstructure basics, order types, factor intuition</li>
+          <li>Python stack: NumPy, Pandas, Matplotlib/Plotly</li>
+        </ul>
+
+        <h2>2) Clean data pipelines</h2>
+        <p>Start with CSVs and graduate to APIs as needed. Keep transforms explicit and reproducible.</p>
+
+        <div class="code"><pre><code class="language-python">import pandas as pd
+
+prices = pd.read_csv("prices.csv", parse_dates=["date"]).set_index("date")
+returns = prices.pct_change().dropna()
+
+rolling = returns.rolling(252).std().rename(columns=lambda s: s+"_vol")
+features = pd.concat([returns, rolling], axis=1).dropna()
+print(features.tail())
+</code></pre></div>
+
+        <h2>3) Backtesting the simple stuff</h2>
+        <p>Pick a transparent rule, avoid look‑ahead bias, and compare to a baseline.</p>
+
+        <h2>4) Evaluation</h2>
+        <ul class="bullets">
+          <li>Return, volatility, Sharpe</li>
+          <li>Drawdowns and turnover</li>
+          <li>Stability across regimes</li>
+        </ul>
+
+        <h2>5) Tell the story</h2>
+        <p>Great research is narrative + evidence. Explain tradeoffs and risks clearly.</p>
+
+        <p class="muted">Have feedback or questions? Reach out via GitHub.</p>
+      </article>
+
+      <footer class="site-footer">
+        <p>© <span id="year"></span> Lucas Gay.</p>
+      </footer>
+    </main>
+    <script>
+      document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+  </body>
+  </html>
+
