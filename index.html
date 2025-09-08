@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>My Website</title>
+    <meta name="description" content="Personal website" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/styles.css" />
+  </head>
+  <body>
+    <main class="container">
+      <header class="site-header">
+        <h1 id="site-title">Your Name</h1>
+        <p class="tagline">Building cool things on the internet.</p>
+      </header>
+
+      <section class="content">
+        <p>
+          This is your new GitHub Pages site. Edit <code>index.html</code> and
+          <code>assets/css/styles.css</code> to make it yours.
+        </p>
+        <ul class="links">
+          <li><a href="#" aria-disabled="true">About</a></li>
+          <li><a href="#" aria-disabled="true">Projects</a></li>
+          <li><a href="#" aria-disabled="true">Contact</a></li>
+        </ul>
+      </section>
+
+      <footer class="site-footer">
+        <p>
+          © <span id="year"></span> Your Name. Hosted on GitHub Pages.
+        </p>
+      </footer>
+    </main>
+
+    <script>
+      document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+  </body>
+  </html>
+
