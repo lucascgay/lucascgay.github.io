@@ -2,17 +2,10 @@
   "as_of": "2025-04-01",
   "currency": "USD",
   "positions": [
-    { "ticker": "SPY",  "shares": 10, "price": 500.00 },
-    { "ticker": "QQQ",  "shares": 6,  "price": 430.00 },
-    { "ticker": "AAPL", "shares": 12, "price": 190.00 },
-    { "ticker": "MSFT", "shares": 8,  "price": 415.00 },
-    
-    // Cash options (pick one approach):
-    // 1) Use value override (recommended for cash):
-    // { "ticker": "CASH", "value": 5000 },
-    //
-    // 2) Or represent cash in USD units with price=1:
-    // { "ticker": "CASH", "shares": 5000, "price": 1 }
+    { "ticker": "SPY",  "shares": 10 },
+    { "ticker": "QQQ",  "shares": 6  },
+    { "ticker": "AAPL", "shares": 12 },
+    { "ticker": "MSFT", "shares": 8  },
     { "ticker": "CASH", "value": 5000 }
   ]
 }
