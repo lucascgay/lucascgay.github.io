@@ -6,3 +6,7 @@ node_modules/
 dist/
 .cache/
 
+# Private portfolio inputs (keep local)
+data/holdings.private.json
+data/*secret*.json
+data/*.private.json
