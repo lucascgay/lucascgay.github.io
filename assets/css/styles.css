@@ -76,6 +76,8 @@ body {
 .btn:hover { transform: translateY(-1px); border-color: #2a2d39; }
 .btn-primary { background: linear-gradient(135deg, #1a1b22, #191a20); position: relative; }
 .btn-primary::after { content:""; position:absolute; inset:0; border-radius:10px; padding:1px; background: linear-gradient(135deg, var(--accent), var(--accent-2)); -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask-composite: exclude; }
+.btn-outline { background: transparent; border-color: #2a2d39; }
+.btn-ghost { background: transparent; border-color: transparent; }
 
 /* Cards and posts */
 .section-title { font-weight: 800; margin: 32px 0 12px; letter-spacing: -0.01em; }
@@ -93,6 +95,7 @@ body {
 
 .split { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
 .bullets { padding-left: 18px; }
+.social-buttons { display:flex; gap:12px; flex-wrap: wrap; margin: 8px 0 8px; }
 
 @media (max-width: 860px) {
   .cards { grid-template-columns: 1fr; }

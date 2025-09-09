@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Contact — Lucas Gay</title>
+    <meta name="description" content="Contact Lucas Gay" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/styles.css" />
+  </head>
+  <body>
+    <main class="container">
+      <header class="site-header">
+        <nav class="nav">
+          <a class="brand" href="/">LG</a>
+          <div class="nav-links">
+            <a href="/about.html">About</a>
+            <a href="/blog/">Blog</a>
+            <a href="/assets/resume.pdf" target="_blank" rel="noopener">Resume</a>
+            <a href="https://www.linkedin.com/in/YOUR-LINKEDIN" target="_blank" rel="noopener">LinkedIn</a>
+            <a class="active" href="/contact.html">Contact</a>
+            <a href="https://github.com/lucascgay" target="_blank" rel="noopener">GitHub</a>
+          </div>
+        </nav>
+        <h1 id="site-title"><span class="accent">Get in touch</span></h1>
+        <p class="tagline">Happy to chat about markets, software, and projects.</p>
+      </header>
+
+      <section class="content">
+        <div class="cards">
+          <article class="card">
+            <h3>Email</h3>
+            <p><a href="mailto:YOUR.EMAIL@example.com">YOUR.EMAIL@example.com</a></p>
+          </article>
+          <article class="card">
+            <h3>LinkedIn</h3>
+            <p><a href="https://www.linkedin.com/in/YOUR-LINKEDIN" target="_blank" rel="noopener">linkedin.com/in/YOUR-LINKEDIN</a></p>
+          </article>
+          <article class="card">
+            <h3>Resume</h3>
+            <p><a href="/assets/resume.pdf" target="_blank" rel="noopener">Download PDF</a></p>
+          </article>
+          <article class="card">
+            <h3>GitHub</h3>
+            <p><a href="https://github.com/lucascgay" target="_blank" rel="noopener">github.com/lucascgay</a></p>
+          </article>
+        </div>
+      </section>
+
+      <footer class="site-footer">
+        <p>© <span id="year"></span> Lucas Gay.</p>
+      </footer>
+    </main>
+    <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  </body>
+  </html>
+
