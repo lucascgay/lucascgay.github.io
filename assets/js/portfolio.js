@@ -16,7 +16,21 @@
 
       // Colors (paired gradient-ish palette)
       const base = ['#6ee7b7','#7dd3fc','#fca5a5','#c4b5fd','#fde68a','#a7f3d0','#93c5fd','#f9a8d4','#fcd34d','#fdba74'];
-      const bg = labels.map((_, i) => base[i % base.length]);
+      const ctx2d = el.getContext('2d');
+      function shade(hex, p){
+        // simple hex shade: p in [-1,1]
+        const f = parseInt(hex.slice(1),16), t = p<0?0:255, P = p<0?p*-1:p;
+        const R = f>>16, G = f>>8&0x00FF, B = f&0x0000FF;
+        const r = Math.round((t-R)*P)+R, g=Math.round((t-G)*P)+G, b=Math.round((t-B)*P)+B;
+        return '#' + (0x1000000 + (r<<16) + (g<<8) + b).toString(16).slice(1);
+      }
+      const bg = labels.map((_, i) => {
+        const c = base[i % base.length];
+        const grad = ctx2d.createLinearGradient(0, 0, 0, el.height);
+        grad.addColorStop(0, shade(c, 0.12));
+        grad.addColorStop(1, shade(c, -0.18));
+        return grad;
+      });
 
       const textColor = getComputedStyle(document.body).getPropertyValue('--text') || '#e6e6e6';
       const bgBorder = '#0b0c10';
@@ -54,6 +68,21 @@
         }
       };
 
+      // Shadow/"3D" depth effect across slices
+      const depth = {
+        id: 'depthShadow',
+        beforeDatasetDraw(chart, args) {
+          const {ctx} = chart;
+          ctx.save();
+          ctx.shadowColor = 'rgba(0,0,0,0.35)';
+          ctx.shadowBlur = 12;
+          ctx.shadowOffsetY = 6;
+        },
+        afterDatasetDraw(chart, args) {
+          chart.ctx.restore();
+        }
+      };
+
       const chart = new Chart(el.getContext('2d'), {
         type: 'doughnut',
         data: {
@@ -63,15 +92,15 @@
             data: weights,
             backgroundColor: bg,
             borderColor: bgBorder,
-            borderWidth: 2,
+            borderWidth: 1.5,
             spacing: 2,
-            hoverOffset: 14
+            hoverOffset: 16
           }]
         },
         options: {
           responsive: true,
           maintainAspectRatio: true,
-          cutout: '62%',
+          cutout: '58%',
           rotation: -90, // start at top
           plugins: {
             legend: {
@@ -96,8 +125,9 @@
           animation: {
             animateRotate: true,
             animateScale: true,
-            duration: 900,
-            easing: 'cubicBezier(.15,.75,.35,1)'
+            duration: 1200,
+            easing: 'cubicBezier(.15,.75,.35,1)',
+            delay: (ctx) => (ctx.type === 'data' && ctx.mode === 'default') ? ctx.dataIndex * 120 : 0
           },
           onHover: (evt, elements, chartInstance) => {
             chartInstance._active = elements; // used by centerText plugin
@@ -127,7 +157,7 @@
             chartInstance.update();
           }
         },
-        plugins: [center]
+        plugins: [center, depth]
       });
     })
     .catch(() => {
