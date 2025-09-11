@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Blog — Lucas Gay</title>
-    <meta name="description" content="Blog — finance, code, and notes" />
+    <title>GoodReads — Lucas Gay</title>
+    <meta name="description" content="Books and papers I recommend — finance, quant, and systems." />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
@@ -15,29 +15,23 @@
       <header class="site-header">
         <nav class="nav">
           <a href="/about.html">About</a>
-          <a class="active" href="/blog/">Blog</a>
-          <a href="/reads/">GoodReads</a>
+          <a href="/blog/">Blog</a>
+          <a class="active" href="/reads/">GoodReads</a>
         </nav>
-        <h1 id="site-title"><span class="accent">Blog</span></h1>
-        <p class="tagline">Notes on markets, code, and experiments.</p>
+        <h1 id="site-title"><span class="accent">Good Reads</span></h1>
+        <p class="tagline">Books and papers I recommend — finance, quant, and systems.</p>
       </header>
 
       <section class="content">
-        <div class="posts">
-          <a class="post" href="/blog/posts/quant-roadmap.html">
-            <span class="post-meta">Guide · Apr 2025</span>
-            <span class="post-title">A practical roadmap for learning quant</span>
-            <span class="post-desc">Concepts, data, and projects to build intuition.</span>
-          </a>
-        </div>
+        <div id="reads" class="reads"></div>
       </section>
 
       <footer class="site-footer">
         <p>© <span id="year"></span> Lucas Gay.</p>
       </footer>
     </main>
-    <script>
-      document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
+    <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+    <script src="/assets/js/reads.js"></script>
   </body>
   </html>
+

@@ -61,7 +61,7 @@
           } else {
             ctx.font = '700 18px Inter, system-ui, sans-serif';
             ctx.globalAlpha = 0.8;
-            ctx.fillText('Allocation', x, y);
+            ctx.fillText('My Portfolio', x, y);
             ctx.globalAlpha = 1;
           }
           ctx.restore();
