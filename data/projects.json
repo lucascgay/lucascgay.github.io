@@ -1,0 +1,28 @@
+[
+  {
+    "title": "Market Factors Explorer",
+    "description": "Interactive tool to visualize factor exposures and performance across time with simple backtests.",
+    "tags": ["quant", "backtesting", "python"],
+    "github": "https://github.com/lucascgay/your-factors-explorer",
+    "demo": "",
+    "year": 2025,
+    "pinned": true
+  },
+  {
+    "title": "ETF Screener",
+    "description": "Lightweight screener to filter ETFs by fees, liquidity, and composition with client-side charts.",
+    "tags": ["fintech", "typescript", "charts"],
+    "github": "https://github.com/lucascgay/your-etf-screener",
+    "demo": "",
+    "year": 2024
+  },
+  {
+    "title": "Backtest Sandbox",
+    "description": "Notebook collection exploring momentum/quality/size signals and their regime behavior.",
+    "tags": ["research", "pandas", "notebooks"],
+    "github": "https://github.com/lucascgay/your-backtest-sandbox",
+    "demo": "",
+    "year": 2023
+  }
+]
+
