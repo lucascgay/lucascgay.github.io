@@ -9,16 +9,16 @@
     "pinned": true
   },
   {
-    "title": "ETF Screener",
-    "description": "Lightweight screener to filter ETFs by fees, liquidity, and composition with client-side charts.",
-    "tags": ["fintech", "typescript", "charts"],
-    "github": "https://github.com/lucascgay/your-etf-screener",
+    "title": "Stock Sentiment Analysis",
+    "description": "Using Vertex AI api to facilitate sentiment analysis of equities over social media like reddit.",
+    "tags": ["web scraping", "sentiment", "machine learning"],
+    "github": "https://github.com/lucascgay/stock_sentiment_analysis",
     "demo": "",
-    "year": 2024
+    "year": 2025
   },
   {
     "title": "Options Volatility Surfaces",
-    "description": "Uses y-finance options price data as input to the black scholes data to derive volatility. Axes: Volatility, moneyness, option price.",
+    "description": "Uses y-finance options price data as input to the black scholes data to derive volatility. X: Moneyness (strike / spot), Y: Days to expiration, Z: IV",
     "tags": ["derivatives", "python", "pricing"],
     "github": "https://github.com/lucascgay/black_scholes_calculator",
     "demo": "",
