@@ -17,12 +17,12 @@
     "year": 2024
   },
   {
-    "title": "Backtest Sandbox",
-    "description": "Notebook collection exploring momentum/quality/size signals and their regime behavior.",
-    "tags": ["research", "pandas", "notebooks"],
-    "github": "https://github.com/lucascgay/your-backtest-sandbox",
+    "title": "Black-Scholes Calculator",
+    "description": "Web-based options pricing tool implementing the Black-Scholes model with greeks and sensitivity charts.",
+    "tags": ["derivatives", "python", "pricing"],
+    "github": "https://github.com/lucascgay/black-scholes-calculator",
     "demo": "",
-    "year": 2023
+    "year": 2025
   }
 ]
 
