@@ -166,18 +166,17 @@
 
       // Update chart colors when theme changes
       const updateChartColors = () => {
-        const newColor = getTextColor();
-        chart.options.plugins.legend.labels.color = newColor;
-        chart.update('none');
+        requestAnimationFrame(() => {
+          const newColor = getTextColor();
+          chart.options.plugins.legend.labels.color = newColor;
+          // Force full update and redraw
+          chart.update();
+        });
       };
 
       // Listen for theme changes
-      const observer = new MutationObserver(() => {
+      window.addEventListener('themeChange', () => {
         updateChartColors();
-      });
-      observer.observe(document.body, {
-        attributes: true,
-        attributeFilter: ['class']
       });
     })
     .catch(() => {

@@ -16,5 +16,7 @@ if (toggle) {
     const isDark = document.body.classList.contains('dark');
     localStorage.setItem('theme', isDark ? 'dark' : 'light');
     setIcon();
+    // Dispatch custom event so charts can update
+    window.dispatchEvent(new CustomEvent('themeChange', { detail: { isDark } }));
   });
 }
