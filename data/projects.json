@@ -1,9 +1,9 @@
 [
   {
-    "title": "Market Factors Explorer",
-    "description": "Interactive tool to visualize factor exposures and performance across time with simple backtests.",
-    "tags": ["quant", "backtesting", "python"],
-    "github": "https://github.com/lucascgay/your-factors-explorer",
+    "title": "Kalshi Insider Detector",
+    "description": "A sophisticated insider trading detection system for Kalshi prediction markets. Monitors large trades, detects suspicious patterns, and identifies potential insider activity using multi-signal analysis.",
+    "tags": ["frontrunning", "kalshi", "pattern recognition"],
+    "github": "https://github.com/lucascgay/kalshi_insider_detector",
     "demo": "",
     "year": 2025,
     "pinned": true
@@ -19,7 +19,7 @@
   {
     "title": "Options Volatility Surfaces",
     "description": "Uses y-finance options price data as input to the black scholes data to derive volatility. X: Moneyness (strike / spot), Y: Days to expiration, Z: IV",
-    "tags": ["derivatives", "python", "pricing"],
+    "tags": ["derivates", "black scholes", "volatility surface"],
     "github": "https://github.com/lucascgay/black_scholes_calculator",
     "demo": "",
     "year": 2025
