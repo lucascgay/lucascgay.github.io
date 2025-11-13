@@ -32,8 +32,12 @@
         return grad;
       });
 
-      const textColor = getComputedStyle(document.body).getPropertyValue('--text') || '#e6e6e6';
       const bgBorder = '#0b0c10';
+
+      // Helper to get current text color dynamically
+      const getTextColor = () => {
+        return getComputedStyle(document.body).getPropertyValue('--text').trim() || '#e6e6e6';
+      };
 
       // Center text plugin (shows hovered segment percent)
       const center = {
@@ -46,7 +50,7 @@
           ctx.save();
           ctx.textAlign = 'center';
           ctx.textBaseline = 'middle';
-          ctx.fillStyle = textColor.trim() || '#e6e6e6';
+          ctx.fillStyle = getTextColor();
 
           if (_active && _active.length) {
             const a = _active[0];
@@ -106,7 +110,7 @@
             legend: {
               position: 'bottom',
               labels: {
-                color: textColor,
+                color: getTextColor(),
                 usePointStyle: true,
                 pointStyle: 'circle',
               }
@@ -158,6 +162,22 @@
           }
         },
         plugins: [center, depth]
+      });
+
+      // Update chart colors when theme changes
+      const updateChartColors = () => {
+        const newColor = getTextColor();
+        chart.options.plugins.legend.labels.color = newColor;
+        chart.update('none');
+      };
+
+      // Listen for theme changes
+      const observer = new MutationObserver(() => {
+        updateChartColors();
+      });
+      observer.observe(document.body, {
+        attributes: true,
+        attributeFilter: ['class']
       });
     })
     .catch(() => {
